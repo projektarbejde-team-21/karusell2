@@ -2,7 +2,7 @@
 import Button from "../components/Button.astro";
 ---
 
-<footer>
+<!-- <footer>
   <img src="" alt="" />
   <div>
     <a href="https://www.facebook.com/karruselfest"
@@ -12,8 +12,164 @@ import Button from "../components/Button.astro";
     <a href=""><img src="" alt="" /></a>
     <a href=""><img src="" alt="" /></a>
   </div>
-  <!-- knap -->
+  !-- knap --
   <Button variant="secondary">DOWNLOAD OUR APP</Button>
-</footer>
+</footer> -->
 
-<style></style>
+ <footer>
+        <div class="grid_1-1-1">
+            <div class="foten1">
+                <a href="index.html">
+                    <img class="footer_img" src="public/karusell_logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="gridf1">
+                <p>KONTAKT OSS: <br>
+                    k@k.com <br>
+                    +45 93799627 <br>
+                    FACEBOOK:  <br>
+                    INSTAGRAM:  <br>
+                </p>
+            </div>
+            <div class="gridf2">
+                <p>OM OSS: <br>
+                    PRIVACY POLICY <br>
+                    COOKIES <br>
+                 
+                </p>
+            </div>
+            <div class="gridf3">
+                          <!-- knap -->
+  <Button variant="secondary">DOWNLOAD OUR APP</Button>
+  </div>
+        </div>
+    </footer>
+<style>
+/********** FOOTER **********/
+
+footer {
+  background-color: #120524;
+  gap: 150px;
+  padding: 20px;
+}
+
+@media (min-width: 750px) {
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.footer_img{
+    width: 150px;
+}
+.foot1 {
+  padding-bottom: 40px;
+  padding: 20px;
+}
+
+.grid_1-1-1 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: grid;
+  gap: 10px;
+}
+
+.footerh {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f6ebd7;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.joinbutton {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: #f6ebd7;
+  border-radius: 50px;
+  padding: 15px 32px;
+  text-decoration: none;
+}
+
+.footlinks {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f6ebd7;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.foottext {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #f6ebd7;
+}
+
+/********** FOOTER SLUT **********/
+
+.padding {
+  padding: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  padding-bottom: 2rem;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  line-height: 1.4;
+}
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: rgb(255, 255, 255);
+}
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+.dato {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: rgb(255, 255, 255);
+  text-align: right;
+}
+@media screen and (max-width: 800px) {
+  h1 {
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  h2 {
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.2rem;
+  }
+  h3 {
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8rem;
+  }
+  .links_nett {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #f6ebd7;
+    background-color: rgb(1, 1, 208);
+    border-radius: 50px;
+    padding: 15px 32px;
+    text-decoration: none;
+  }
+  .links_nett:hover {
+    color: rgb(0, 0, 0);
+  }
+}
+</style>
