@@ -1,0 +1,61 @@
+---
+import Button from "./Button.astro";
+---
+<main>
+    <div class="bilde_container">
+     <img src="public/karusell_forsidebilde.jpg" alt="bilde karusell">
+     <div class="tekst_over_bilde">3 DAYS OF HOUSE, TECHNO & DISCO IN THE WOODS!</div>
+   <h1 class="tekst_over_bilde_h1">28-30 AUGUST 2025</h1>
+  
+    </div>
+</main>
+ 
+<style>
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 2rem;
+  border-radius: 0;
+}
+  .bilde_container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .bilde_container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .tekst_over_bilde {
+    position: absolute;
+    top: 70%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    padding: 10px; */
+    border-radius: 5px; 
+    text-align: center;
+    color: #ffffff;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+  }
+    .tekst_over_bilde_h1 {
+    position: absolute;
+    top: 80%;
+    left: 24%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+</style>
