@@ -28,11 +28,24 @@ Then sign up today and we will reach out to you.
     </div>
 </div>
 <h1>GALLERY</h1>
+<div class="gallery_grid">
+  <img class="g1" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g2" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g3" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g4" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g5" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g6" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g7" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g8" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g9" src="public/img/ben.png" alt="Ben Böhmer">
+
+</div>
  <Button variant="primary">VIEW ALL</Button>
 
   </main>
 </Layout>
 <style>
+  
   .h1_form {
   align-items: center; 
 }
@@ -87,5 +100,18 @@ input::placeholder {
 .tekst_form {
   grid-column: 1;
 }
-
+.gallery_grid {
+  display: grid;
+  grid-column: 1fr 1fr 1fr;
+  margin-bottom: 1rem;
+  margin-left: 4rem;
+}
+.g2 {
+  grid-row: 1;
+  grid-column: 2;
+}
+.g3 {
+  grid-row: 1;
+  grid-column: 3;
+}
 </style>
