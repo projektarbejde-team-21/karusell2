@@ -2,8 +2,27 @@
 import Layout from "../layout/Layout.astro";
 import "../styles/global.css";
 ---
-<Layout>
-  <main>
 
-  </main>
+<!-- export async function getStaticPaths() {
+  const artists = await fetch(url, {
+      headers: {
+        apikey: "eyJhb......",
+      },
+    }).then(res=>res.json())
+  
+  return artists.map(artist => ({
+      params: { artist: artist.slug }, // [artist]=artist.slug
+      props: { artist } // send al data med som props
+    }))
+}
+
+const { artist } = Astro.props;
+console.log(artist) // artist.name, artist.image osv.
+---
+<h1>{artist.name}</h1>
+--- -->
+<Layout>
+  <main></main>
 </Layout>
+
+<style></style>
