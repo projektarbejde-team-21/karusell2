@@ -9,7 +9,11 @@ import Button from "../components/Button.astro";
   <main>
      <Hero/>
     <h1>LINEUP 2025</h1>
+    <div class="Button">
+      <a href="/lineup">
 <Button variant="primary">VIEW ALL</Button>
+</a>
+</div>
     <div class="submit_from">
 <h1 class="h1_form">BECOME A VOLUNTEER FOR 2025</h1>
 <p class="tekst_form">Are you interested in being a part of the volunteering community and get a bunch of good deals and friends? 
@@ -40,8 +44,9 @@ Then sign up today and we will reach out to you.
   <img class="g9" src="public/img/ben.png" alt="Ben Böhmer">
 
 </div>
+<div class="Button">
  <Button variant="primary">VIEW ALL</Button>
-
+</div>
   </main>
 </Layout>
 <style>
@@ -113,5 +118,8 @@ input::placeholder {
 .g3 {
   grid-row: 1;
   grid-column: 3;
+}
+.Button{
+  text-align: center;
 }
 </style>
