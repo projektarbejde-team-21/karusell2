@@ -2,80 +2,30 @@
 import Button from "./Button.astro";
 ---
 <main>
-    <div class="bilde_container">
-     <img src="public/karusell_forsidebilde.jpg" alt="bilde karusell">
-     <div class="tekst_over_bilde">3 DAYS OF HOUSE, TECHNO & DISCO IN THE WOODS!</div>
-   <h1 class="tekst_over_bilde_h1">28-30 AUGUST 2025</h1>
-   <div class="Button">
-    <a href="https://www.ticketmaster.dk/event/553467?language=da-dk">
-  <Button variant="primary" >TICKETS</Button>
-  </a>
-  </div>
+  <div class="bilde_container">
+    <img src="public/karusell_forsidebilde.jpg" alt="bilde karusell" />
+    <div class="tekst_over_bilde">
+      3 DAYS OF HOUSE, TECHNO & DISCO IN THE WOODS!
     </div>
+    <h1 class="tekst_over_bilde_h1">28-30 AUGUST 2025</h1>
+    <div class="Button">
+      <a href="https://www.ticketmaster.dk/event/553467?language=da-dk">
+        <Button variant="primary">TICKETS</Button>
+      </a>
+    </div>
+  </div>
 </main>
- 
+
 <style>
- @media (min-width: 750px) {
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 2rem;
-  border-radius: 0;
-}
-  .bilde_container {
-    position: relative;
-    display: inline-block;
-  }
-
-  .bilde_container img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .tekst_over_bilde {
-    position: absolute;
-    top: 75%;
-    left: 37%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    padding: 10px; */
-    border-radius: 5px; 
-    color: #ffffff;
-    font-family: "Archivo Black", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    
-  }
-    .tekst_over_bilde_h1 {
-    position: absolute;
-    top: 80%;
-    left: 14%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
- .Button {
-   position: absolute;
-    top: 85%;
-    left: 6.3%;
- }
-}
-@media (max-width: 750px) {
+  /* Felles stil for både mobil og desktop */
   img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 2rem;
-  border-radius: 0;
-}
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 2rem;
+    border-radius: 0;
+  }
+
   .bilde_container {
     position: relative;
     display: inline-block;
@@ -89,24 +39,16 @@ img {
 
   .tekst_over_bilde {
     position: absolute;
-    top: 67%;
-    left: 37%;
-    transform: translate(-50%, -50%);
-    font-size: 1rem;
-    padding: 10px; */
-    border-radius: 5px; 
     color: #ffffff;
     font-family: "Archivo Black", sans-serif;
     font-weight: 400;
     font-style: normal;
-    
+    padding: 10px;
+    border-radius: 5px;
   }
-    .tekst_over_bilde_h1 {
+
+  .tekst_over_bilde_h1 {
     position: absolute;
-    top: 78%;
-    left: 18%;
-    transform: translate(-50%, -50%);
-    font-size: 0.4rem;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
@@ -115,10 +57,53 @@ img {
     font-weight: 400;
     font-style: normal;
   }
- .Button {
-   position: absolute;
-    top: 85%;
-    left: 6.3%;
- }
-}
+
+  .Button {
+    position: absolute;
+  }
+
+  /* Responsiv design for skjermer som er større enn 750px (desktop) */
+  @media (min-width: 750px) {
+    .tekst_over_bilde {
+      top: 75%;
+      left: 37%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+    }
+
+    .tekst_over_bilde_h1 {
+      top: 80%;
+      left: 14%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+    }
+
+    .Button {
+      top: 85%;
+      left: 6.3%;
+    }
+  }
+
+  /* Responsiv design for skjermer som er mindre enn 750px (mobil) */
+  @media (max-width: 750px) {
+    .tekst_over_bilde {
+      top: 70%;
+      left: 37.5%;
+      transform: translate(-50%, -50%);
+      font-size: 1rem;
+    }
+
+    .tekst_over_bilde_h1 {
+      top: 80%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+      font-size: 0.8rem;
+    }
+
+    .Button {
+      top: 70%;
+      left: 70%;
+    }
+  }
+
 </style>

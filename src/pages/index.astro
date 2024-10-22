@@ -49,91 +49,142 @@ Then sign up today and we will reach out to you.
 </div>
   </main>
 </Layout>
+
 <style>
-   @media (min-width: 750px) {
-  .h1_form {
-  align-items: center; 
-}
-	h1{
-    color: #96E9FF;
+  /* Felles styling */
+  h1 {
+    color: #96e9ff;
+    /* text-align: center; */
   }
-p{ 
-  color: white;
-  text-align: center;
-}
-form {
-    font-family: Arial, sans-serif;
-    background-color: #120524;
-    justify-content: center;
-    align-items: center;
-} 
+  
+  p {
+    color: white;
+    /* text-align: center; */
+  }
 
-.form-container {
+  .Button {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  /* .form-container {
     background-color: #120524;
-    /* padding: 20px;
-    border-radius: 8px; */
+    padding: 20px;
+    border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-form {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+*/
+  form {
     display: flex;
     flex-direction: column;
-}
+  } 
 
-label {
+  label {
     color: white;
     margin-bottom: 8px;
-}
+  }
 
-input {
+  input {
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 4px;
     background-color: #f3f3f3;
     color: #333;
     font-size: 16px;
-}
+    border: none;
+  }
 
-input::placeholder {
+  input::placeholder {
     color: #ccc;
-}
-.submit_from {
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* Desktop-styling */
+  @media (min-width: 750px) {
+    
+    .submit_from {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
-}
-.tekst_form {
+      gap: 2rem;
+      padding: 2rem;
+    }
+.h1_form {
   grid-column: 1;
-}
-.gallery_grid {
-  display: grid;
-  grid-column: 1fr 1fr 1fr;
-  margin-bottom: 1rem;
-  margin-left: 4rem;
-}
-.g2 {
   grid-row: 1;
-  grid-column: 2;
-}
-.g3 {
-  grid-row: 1;
-  grid-column: 3;
-}
-.Button{
-  text-align: center;
-}
-   }
+} 
+    .tekst_form {
+      grid-column: 1;
+      grid-row: 1;
+      text-align: left;
+      padding-right: 2rem;
+      padding-top: 6rem;
+    }
 
-   @media (max-width: 750px) {
-      .h1_form {
-  align-items: center; 
-}
-	h1{
-    color: #96E9FF;
+    .form-container {
+      grid-column: 2;
+      grid-row: 1;
+      max-width: 100%; Full width i grid-kolonnen
+    }
+
+    .gallery_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 0 auto;
+      padding: 2rem;
+      max-width: 1200px;
+    }
+
+    .gallery_grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
   }
-p{ 
-  color: white;
+
+  /* Mobil-styling */
+  @media (max-width: 750px) {
+    .submit_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+.h1_form {
   text-align: center;
 }
-   }
+    .tekst_form {
+      text-align: center;
+      /* padding: 0 1rem; */
+    }
+
+    .form-container {
+      width: 100%;
+      padding: 1rem;
+      margin: 0;
+    }
+
+    .gallery_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 0 1rem;
+    }
+
+    .gallery_grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
 </style>
