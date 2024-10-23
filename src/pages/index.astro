@@ -3,6 +3,7 @@ import Layout from "../layout/Layout.astro";
 import "../styles/global.css";
 import Hero from "../components/Hero.astro";
 import Button from "../components/Button.astro";
+import Card from "../components/Card.astro"
 ---
 <Layout>
   <main>
@@ -46,6 +47,7 @@ import Button from "../components/Button.astro";
         </form>
       </div>
     </div>
+    <Card />
     <h1 class="gallery_h1">GALLERY</h1>
 
     <!-- Start på karusell-galleriet -->
@@ -109,25 +111,29 @@ import Button from "../components/Button.astro";
   grid-template-columns: 1fr 1fr;
       gap: 2rem;
       padding: 2rem;
+      margin: 5rem;
+      margin-left: 15rem;
+      margin-right: 15rem;
     }
 .h1_form {
   grid-column: 1;
   grid-row: 1;
+  font-size: 23px;
+  padding-top: 4rem;
 } 
   }
     .tekst_form {
       grid-column: 1;
       grid-row: 1;
       text-align: left;
-      padding-right: 2rem;
       padding-top: 6rem;
+
     }
 
     .form-container {
-      grid-column: 2;
-      grid-row: 1;
+      padding-top: 1rem;
       max-width: 100%; Full width i grid-kolonnen
-    }
+    } 
   .lineup_h1 {
     padding-left: 1rem;
   }
@@ -184,7 +190,8 @@ import Button from "../components/Button.astro";
   }
 
   .carousel-item img {
-    width: 100%;
+    width: 450px;
+    height: 450px;
     border-radius: 8px;
   }
 
@@ -223,26 +230,32 @@ import Button from "../components/Button.astro";
 </style>
 
 <script>
-let currentIndex = 0;
-
-function moveSlide(direction) {
-  const slides = document.querySelectorAll('.carousel-item');
-  const totalSlides = slides.length;
-  const visibleSlides = window.innerWidth < 750 ? 2 : 3; // Viser 2 bilder på mobil, 3 på desktop
-
-  currentIndex += direction;
-
-  // Sikrer at currentIndex ikke går utenfor grensene
-  if (currentIndex > totalSlides - visibleSlides) {
-    currentIndex = 0; // Går tilbake til start om man er på slutten
-  } else if (currentIndex < 0) {
-    currentIndex = totalSlides - visibleSlides; // Går til slutten om man går forbi starten
+  let currentIndex = 0;
+  
+  function moveSlide(direction) {
+    const slides = document.querySelectorAll(".carousel-item");
+    const totalSlides = slides.length;
+    const visibleSlides = window.innerWidth < 750 ? 2 : 3; // Viser 2 bilder på mobil, 3 på desktop
+    
+    currentIndex += direction;
+    
+    // Sikrer at currentIndex ikke går utenfor grensene
+    if (currentIndex > totalSlides - visibleSlides) {
+      currentIndex = 0; // Går tilbake til start om man er på slutten
+    } else if (currentIndex < 0) {
+      currentIndex = totalSlides - visibleSlides; // Går til slutten om man går forbi starten
+    }
+    
+    // Kalkulerer hvor langt vi skal flytte karusellen
+    const newTranslateX = -currentIndex * (100 / visibleSlides); 
+    document.querySelector(".carousel-slide").style.transform = `translateX(${newTranslateX}%)`;
   }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+// Tilføj funktionen til knapperne
+document.querySelector(".carousel-prev").onclick = () => moveSlide(-1);
+  document.querySelector(".carousel-next").onclick = () => moveSlide(1);
 
-  // Kalkulerer hvor langt vi skal flytte karusellen
-  const newTranslateX = -currentIndex * (100 / visibleSlides); 
-  document.querySelector('.carousel-slide').style.transform = `translateX(${newTranslateX}%)`;
-}
 // let currentIndex = 0;
 
 // function moveSlide(direction) {
@@ -263,4 +276,5 @@ function moveSlide(direction) {
 //   const newTranslateX = -currentIndex * (100 / visibleSlides); 
 //   document.querySelector('.lineup_bilder').style.transform = `translateX(${newTranslateX}%)`;
 // }
+  });
 </script>
