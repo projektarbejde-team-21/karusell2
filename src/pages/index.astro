@@ -32,7 +32,22 @@ Then sign up today and we will reach out to you.
     </div>
 </div>
 <h1>GALLERY</h1>
-<div class="gallery_grid">
+<div id="image-slider" class="splide">
+  <div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">
+				<img src="public/img/ben.png">
+			</li>
+			<li class="splide__slide">
+				<img src="public/img/ben.png">
+			</li>
+			<li class="splide__slide">
+				<img src=".../img/1.png">
+			</li>
+		</ul>
+  </div>
+</div>
+<!-- <div class="gallery_grid">
   <img class="g1" src="public/img/ben.png" alt="Ben Böhmer">
   <img class="g2" src="public/img/ben.png" alt="Ben Böhmer">
   <img class="g3" src="public/img/ben.png" alt="Ben Böhmer">
@@ -43,13 +58,19 @@ Then sign up today and we will reach out to you.
   <img class="g8" src="public/img/ben.png" alt="Ben Böhmer">
   <img class="g9" src="public/img/ben.png" alt="Ben Böhmer">
 
-</div>
+</div> -->
 <div class="Button">
  <Button variant="primary">VIEW ALL</Button>
 </div>
+
   </main>
 </Layout>
 
+<script>
+  document.addEventListener( 'DOMContentLoaded', function () {
+    new Splide( '#image-slider' ).mount();
+  } );
+</script>
 <style>
   /* Felles styling */
   h1 {
@@ -108,6 +129,12 @@ Then sign up today and we will reach out to you.
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
   }
+
+/* galleri  */
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
 
   /* Desktop-styling */
   @media (min-width: 750px) {
