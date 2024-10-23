@@ -8,6 +8,8 @@ import Button from "../components/Button.astro";
   <main>
     <Hero />
     <h1 class="lineup_h1">LINEUP 2025</h1>
+   
+
     <div class="Button">
       <a href="/lineup">
         <Button variant="primary">VIEW ALL</Button>
@@ -80,6 +82,7 @@ import Button from "../components/Button.astro";
 </Layout>
 
 <style>
+
   /* Felles styling */
   h1 {
     color: #96e9ff;
@@ -171,7 +174,7 @@ import Button from "../components/Button.astro";
 
   .carousel-slide {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.9s ease-in-out;
   }
 
   .carousel-item {
@@ -240,4 +243,24 @@ function moveSlide(direction) {
   const newTranslateX = -currentIndex * (100 / visibleSlides); 
   document.querySelector('.carousel-slide').style.transform = `translateX(${newTranslateX}%)`;
 }
+// let currentIndex = 0;
+
+// function moveSlide(direction) {
+//   const slides = document.querySelectorAll('.bilder');
+//   const totalSlides = slides.length;
+//   const visibleSlides = window.innerWidth < 750 ? 2 : 3; // Viser 2 bilder på mobil, 3 på desktop
+
+//   currentIndex += direction;
+
+//   // Sikrer at currentIndex ikke går utenfor grensene
+//   if (currentIndex > totalSlides - visibleSlides) {
+//     currentIndex = 0; // Går tilbake til start om man er på slutten
+//   } else if (currentIndex < 0) {
+//     currentIndex = totalSlides - visibleSlides; // Går til slutten om man går forbi starten
+//   }
+
+//   // Kalkulerer hvor langt vi skal flytte karusellen
+//   const newTranslateX = -currentIndex * (100 / visibleSlides); 
+//   document.querySelector('.lineup_bilder').style.transform = `translateX(${newTranslateX}%)`;
+// }
 </script>
