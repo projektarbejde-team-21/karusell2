@@ -1,23 +1,19 @@
 ---
 import Layout from "../layout/Layout.astro";
 import "../styles/global.css";
-
-const data = await fetch(
-  "https://sfjafeukemmdrumyuart.supabase.co/rest/v1/karussel",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmamFmZXVrZW1tZHJ1bXl1YXJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUzOTksImV4cCI6MjA0NDIxMTM5OX0.8EgW5zS9C2qEtcvQMc-sTPbQibDD7SzUEONbYZDBNrk",
-    },
-  }
-).then((res) => res.json());
-
-console.log(data);
 ---
 
 <Layout>
   <main>
+    <template id="Template"
+      ><a href="">
+        <article>
+          <img src="" alt="" />
+          <h3></h3>
+          <p class="subtle"></p>
+        </article>
+      </a>
+    </template>
     <div class="schedule">
       <!-- Thursday -->
       <div class="day">
@@ -103,7 +99,67 @@ console.log(data);
     </div>
   </main>
 </Layout>
-<script></script>
+<script>
+  //   window.addEventListener("DOMContentLoaded", vis);
+  // const template = document.querySelector("template").content;
+
+  // const data = await fetch(
+  //   "https://sfjafeukemmdrumyuart.supabase.co/rest/v1/karussel",
+  //   {
+  //     method: "GET",
+  //     headers: {
+  //       apikey:
+  //         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmamFmZXVrZW1tZHJ1bXl1YXJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUzOTksImV4cCI6MjA0NDIxMTM5OX0.8EgW5zS9C2qEtcvQMc-sTPbQibDD7SzUEONbYZDBNrk",
+  //     },
+  //   }
+  // ).then((res) => res.json());
+  // .then((item) => vis(item));
+
+  // console.log(data);
+  // function vis(data) {
+  //   console.table(data);
+
+  //   data.forEach((item) => {
+  //     const copy = template.cloneNode(true);
+
+  //     copy.querySelector("h3").textContent = item.artist;
+  //     copy.querySelector(".subtle").textContent = item.time;
+  //     copy.querySelector("a").href = `produkt.html?id=${item.id}`;
+
+  //     const image = copy.querySelector("img");
+  //     image.alt = "image of " + item.produktnavn;
+  //     image.src = `img/${item.produktnavn}.webp`;
+
+  //     document.querySelector("template").appendChild(copy);
+  //   });
+  // }
+  window.addEventListener("DOMContentLoaded", async () => {
+    const template = document.querySelector("template").content;
+    const data = await fetch(
+      "https://sfjafeukemmdrumyuart.supabase.co/rest/v1/karussel",
+      {
+        method: "GET",
+        headers: {
+          apikey:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmamFmZXVrZW1tZHJ1bXl1YXJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUzOTksImV4cCI6MjA0NDIxMTM5OX0.8EgW5zS9C2qEtcvQMc-sTPbQibDD7SzUEONbYZDBNrk",
+        },
+      }
+    ).then((res) => res.json());
+
+    console.log(data);
+    vis(data); // Kald funktionen med data
+
+    function vis(data) {
+      console.table(data); // Dette viser dataene i konsollen
+      data.forEach((item) => {
+        const copy = template.cloneNode(true);
+        copy.querySelector("h3").textContent = item.artist;
+        copy.querySelector(".subtle").textContent = item.time;
+        document.querySelector("template").appendChild(copy);
+      });
+    }
+  });
+</script>
 <style>
      @media (min-width: 750px) {
   h1 {
