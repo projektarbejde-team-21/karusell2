@@ -4,49 +4,78 @@ import "../styles/global.css";
 import Hero from "../components/Hero.astro";
 import Button from "../components/Button.astro";
 ---
-
 <Layout>
   <main>
-     <Hero/>
+    <Hero />
     <h1 class="lineup_h1">LINEUP 2025</h1>
     <div class="Button">
       <a href="/lineup">
-<Button variant="primary">VIEW ALL</Button>
-</a>
-</div>
-    <div class="submit_from">
-<h1 class="h1_form">BECOME A VOLUNTEER FOR 2025</h1>
-<p class="tekst_form">Are you interested in being a part of the volunteering community and get a bunch of good deals and friends? 
-Then sign up today and we will reach out to you.
-</p>
-    <div class="form-container">
-        <form action="submit_form" method="post">
-            <label for="full-name">Full name*</label>
-            <input type="text" id="full-name" name="full-name" placeholder="Full name*" required>
-
-            <label for="email">E-mail*</label>
-            <input type="email" id="email" name="email" placeholder="E-mail*" required>
-
-            <Button variant="primary">SUBMIT</Button>
-        </form>
+        <Button variant="primary">VIEW ALL</Button>
+      </a>
     </div>
-</div>
-<h1 class="gallery_h1">GALLERY</h1>
-<div class="gallery_grid">
-  <img class="g1" src="public/img/ben.png" alt="Ben Böhmer">
-  <img class="g2" src="public/img/ben.png" alt="Ben Böhmer">
-  <img class="g3" src="public/img/ben.png" alt="Ben Böhmer">
-  <img class="g4" src="public/img/ben.png" alt="Ben Böhmer">
-  <img class="g5" src="public/img/ben.png" alt="Ben Böhmer">
-  <img class="g6" src="public/img/ben.png" alt="Ben Böhmer">
-  <img class="g7" src="public/img/ben.png" alt="Ben Böhmer">
-  <img class="g8" src="public/img/ben.png" alt="Ben Böhmer">
-  <img class="g9" src="public/img/ben.png" alt="Ben Böhmer">
+    <div class="submit_from">
+      <h1 class="h1_form">BECOME A VOLUNTEER FOR 2025</h1>
+      <p class="tekst_form">
+        Are you interested in being a part of the volunteering community and
+        get a bunch of good deals and friends? Then sign up today and we will
+        reach out to you.
+      </p>
+      <div class="form-container">
+        <form action="submit_form" method="post">
+          <label for="full-name">Full name*</label>
+          <input
+            type="text"
+            id="full-name"
+            name="full-name"
+            placeholder="Full name*"
+            required
+          />
 
-</div>
-<div class="Button">
- <Button variant="primary">VIEW ALL</Button>
-</div>
+          <label for="email">E-mail*</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="E-mail*"
+            required
+          />
+
+          <Button variant="primary">SUBMIT</Button>
+        </form>
+      </div>
+    </div>
+    <h1 class="gallery_h1">GALLERY</h1>
+
+    <!-- Start på karusell-galleriet -->
+    <div class="carousel-container">
+      <button class="carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
+      <div class="carousel-slide">
+        <div class="carousel-item">
+          <img src="public/img/anetha.webp" alt="Ben Böhmer" />
+        </div>
+        <div class="carousel-item">
+          <img src="public/img/ben-bohmer.webp" alt="Ben Böhmer" />
+        </div>
+        <div class="carousel-item">
+          <img src="public/img/harty.webp" alt="Ben Böhmer" />
+        </div>
+        <div class="carousel-item">
+          <img src="public/img/ki-ki.webp" alt="Ben Böhmer" />
+        </div>
+        <div class="carousel-item">
+          <img src="public/img/marlon-hoffstadt.webp" alt="Ben Böhmer" />
+        </div>
+        <div class="carousel-item">
+          <img src="public/img/nene-h.webp" alt="Ben Böhmer" />
+        </div>
+        <!-- Legg til flere bilder hvis ønskelig -->
+      </div>
+      <button class="carousel-next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="Button">
+      <Button variant="primary">VIEW ALL</Button>
+    </div>
   </main>
 </Layout>
 
@@ -54,12 +83,10 @@ Then sign up today and we will reach out to you.
   /* Felles styling */
   h1 {
     color: #96e9ff;
-    /* text-align: center; */
   }
-  
+
   p {
     color: white;
-    /* text-align: center; */
   }
 
   .Button {
@@ -67,25 +94,45 @@ Then sign up today and we will reach out to you.
     margin: 20px 0;
   }
 
-  /* .form-container {
-    background-color: #120524;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    margin: 0 auto;
-    max-width: 500px;
-  }
-*/
   form {
     display: flex;
     flex-direction: column;
-  } 
-.lineup_h1 {
-  padding-left: 1rem;
-}
-.gallery_h1{
-  padding-left: 1rem;
-}
+  }
+/* Desktop-styling */
+  @media (min-width: 750px) {
+    
+    .submit_from {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2rem;
+    }
+.h1_form {
+  grid-column: 1;
+  grid-row: 1;
+} 
+  }
+    .tekst_form {
+      grid-column: 1;
+      grid-row: 1;
+      text-align: left;
+      padding-right: 2rem;
+      padding-top: 6rem;
+    }
+
+    .form-container {
+      grid-column: 2;
+      grid-row: 1;
+      max-width: 100%; Full width i grid-kolonnen
+    }
+  .lineup_h1 {
+    padding-left: 1rem;
+  }
+
+  .gallery_h1 {
+    padding-left: 1rem;
+  }
+
   label {
     color: white;
     margin-bottom: 8px;
@@ -114,83 +161,83 @@ Then sign up today and we will reach out to you.
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  /* Desktop-styling */
-  @media (min-width: 750px) {
-    
-    .submit_from {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      padding: 2rem;
-    }
-.h1_form {
-  grid-column: 1;
-  grid-row: 1;
-} 
+  /* Karusell styling */
+  .carousel-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
 
-    .tekst_form {
-      grid-column: 1;
-      grid-row: 1;
-      text-align: left;
-      padding-right: 2rem;
-      padding-top: 6rem;
-    }
+  .carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
 
-    .form-container {
-      grid-column: 2;
-      grid-row: 1;
-      max-width: 100%; Full width i grid-kolonnen
-    }
+  .carousel-item {
+    flex: 0 0 33.33%; /* Viser 3 bilder samtidig */
+    box-sizing: border-box;
+    padding: 10px;
+  }
 
-    .gallery_grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin: 0 auto;
-      padding: 2rem;
-      max-width: 1200px;
-    }
+  .carousel-item img {
+    width: 100%;
+    border-radius: 8px;
+  }
 
-    .gallery_grid img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+  .carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .carousel-prev {
+    left: 10px;
+  }
+
+  .carousel-next {
+    right: 10px;
+  }
+
+  .carousel-prev:hover, .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   /* Mobil-styling */
   @media (max-width: 750px) {
-    .submit_form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-    }
-.h1_form {
-  text-align: center;
-}
-    .tekst_form {
-      text-align: center;
-      /* padding: 0 1rem; */
-    }
-
-    .form-container {
-      width: 90%;
-      padding: 1rem;
-      margin: 0;
-    }
-
-    .gallery_grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin: 0 1rem;
-    }
-
-    .gallery_grid img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
+    .carousel-item {
+      flex: 0 0 50%; /* Viser 2 bilder på mobil */
     }
   }
 </style>
+
+<script>
+let currentIndex = 0;
+
+function moveSlide(direction) {
+  const slides = document.querySelectorAll('.carousel-item');
+  const totalSlides = slides.length;
+  const visibleSlides = window.innerWidth < 750 ? 2 : 3; // Viser 2 bilder på mobil, 3 på desktop
+
+  currentIndex += direction;
+
+  // Sikrer at currentIndex ikke går utenfor grensene
+  if (currentIndex > totalSlides - visibleSlides) {
+    currentIndex = 0; // Går tilbake til start om man er på slutten
+  } else if (currentIndex < 0) {
+    currentIndex = totalSlides - visibleSlides; // Går til slutten om man går forbi starten
+  }
+
+  // Kalkulerer hvor langt vi skal flytte karusellen
+  const newTranslateX = -currentIndex * (100 / visibleSlides); 
+  document.querySelector('.carousel-slide').style.transform = `translateX(${newTranslateX}%)`;
+}
+</script>
