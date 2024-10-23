@@ -1,0 +1,117 @@
+---
+import Layout from "../layout/Layout.astro";
+import "../styles/global.css";
+import Hero from "../components/Hero.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout>
+  <main>
+     <Hero/>
+    <h1>LINEUP 2025</h1>
+<Button variant="primary">VIEW ALL</Button>
+    <div class="submit_from">
+<h1 class="h1_form">BECOME A VOLUNTEER FOR 2025</h1>
+<p class="tekst_form">Are you interested in being a part of the volunteering community and get a bunch of good deals and friends? 
+Then sign up today and we will reach out to you.
+</p>
+    <div class="form-container">
+        <form action="submit_form" method="post">
+            <label for="full-name">Full name*</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Full name*" required>
+
+            <label for="email">E-mail*</label>
+            <input type="email" id="email" name="email" placeholder="E-mail*" required>
+
+            <Button variant="primary">SUBMIT</Button>
+        </form>
+    </div>
+</div>
+<h1>GALLERY</h1>
+<div class="gallery_grid">
+  <img class="g1" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g2" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g3" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g4" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g5" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g6" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g7" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g8" src="public/img/ben.png" alt="Ben Böhmer">
+  <img class="g9" src="public/img/ben.png" alt="Ben Böhmer">
+
+</div>
+ <Button variant="primary">VIEW ALL</Button>
+
+  </main>
+</Layout>
+<style>
+  
+  .h1_form {
+  align-items: center; 
+}
+	h1{
+    color: #96E9FF;
+  }
+p{ 
+  color: white;
+  text-align: center;
+}
+form {
+    font-family: Arial, sans-serif;
+    background-color: #120524;
+    justify-content: center;
+    align-items: center;
+} 
+
+.form-container {
+    background-color: #120524;
+    /* padding: 20px;
+    border-radius: 8px; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: white;
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #f3f3f3;
+    color: #333;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+.submit_from {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+.tekst_form {
+  grid-column: 1;
+}
+.gallery_grid {
+  display: grid;
+  grid-column: 1fr 1fr 1fr;
+  margin-bottom: 1rem;
+  margin-left: 4rem;
+}
+.g2 {
+  grid-row: 1;
+  grid-column: 2;
+}
+.g3 {
+  grid-row: 1;
+  grid-column: 3;
+}
+</style>
