@@ -44,9 +44,9 @@ import "../styles/global.css";
 
   const { artist } = Astro.props;
   console.log(artist);
-  // const template = document.querySelector("template");
-  // const copy = template.content.cloneNode(true);
-  // copy.querySelector("h1").textContent = artist.artist;
+  const template = document.querySelector("template");
+  const copy = template.content.cloneNode(true);
+  copy.querySelector("h1").textContent = artist.artist;
   // artist.name, artist.image osv.
 </script>
 <style></style>
