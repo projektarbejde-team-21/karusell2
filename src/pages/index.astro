@@ -53,22 +53,22 @@ import Button from "../components/Button.astro";
       <button class="carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
       <div class="carousel-slide">
         <div class="carousel-item">
-          <img src="public/img/anetha.webp" alt="Ben Böhmer" />
+          <img src="public/img/anetha.webp" alt="Anetha" />
         </div>
         <div class="carousel-item">
           <img src="public/img/ben-bohmer.webp" alt="Ben Böhmer" />
         </div>
         <div class="carousel-item">
-          <img src="public/img/harty.webp" alt="Ben Böhmer" />
+          <img src="public/img/harty.webp" alt="Harty" />
         </div>
         <div class="carousel-item">
-          <img src="public/img/ki-ki.webp" alt="Ben Böhmer" />
+          <img src="public/img/ki-ki.webp" alt="Ki/Ki" />
         </div>
         <div class="carousel-item">
-          <img src="public/img/marlon-hoffstadt.webp" alt="Ben Böhmer" />
+          <img src="public/img/marlon-hoffstadt.webp" alt="Marlon Hoffstadt" />
         </div>
         <div class="carousel-item">
-          <img src="public/img/nene-h.webp" alt="Ben Böhmer" />
+          <img src="public/img/nene-h.webp" alt="Nene H" />
         </div>
         <!-- Legg til flere bilder hvis ønskelig -->
       </div>
@@ -223,10 +223,11 @@ import Button from "../components/Button.astro";
 </style>
 
 <script>
+  
 let currentIndex = 0;
 
 function moveSlide(direction) {
-  const slides = document.querySelectorAll('.carousel-item');
+  const slides = document.querySelectorAll(".carousel-item");
   const totalSlides = slides.length;
   const visibleSlides = window.innerWidth < 750 ? 2 : 3; // Viser 2 bilder på mobil, 3 på desktop
 
@@ -241,7 +242,7 @@ function moveSlide(direction) {
 
   // Kalkulerer hvor langt vi skal flytte karusellen
   const newTranslateX = -currentIndex * (100 / visibleSlides); 
-  document.querySelector('.carousel-slide').style.transform = `translateX(${newTranslateX}%)`;
+  document.querySelector(".carousel-slide").style.transform = `translateX(${newTranslateX}%)`;
 }
 // let currentIndex = 0;
 
