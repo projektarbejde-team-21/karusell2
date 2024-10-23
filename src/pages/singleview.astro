@@ -3,26 +3,50 @@ import Layout from "../layout/Layout.astro";
 import "../styles/global.css";
 ---
 
-<!-- export async function getStaticPaths() {
-  const artists = await fetch(url, {
-      headers: {
-        apikey: "eyJhb......",
-      },
-    }).then(res=>res.json())
-  
-  return artists.map(artist => ({
-      params: { artist: artist.slug }, // [artist]=artist.slug
-      props: { artist } // send al data med som props
-    }))
-}
-
-const { artist } = Astro.props;
-console.log(artist) // artist.name, artist.image osv.
----
-<h1>{artist.name}</h1>
---- -->
 <Layout>
-  <main></main>
+  <main>
+    <template>
+      <h1></h1>
+    </template>
+    <!-- <h1>{artist.artist}</h1>
+    <p>{artist.about}</p> -->
+  </main>
 </Layout>
+<script>
+ window.addEventListener("DOMContentLoaded", async () => {
+    const artists = await fetch(
+      "https://sfjafeukemmdrumyuart.supabase.co/rest/v1/karussel",
+      {
+        method: "GET",
+        headers: {
+          apikey:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmamFmZXVrZW1tZHJ1bXl1YXJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUzOTksImV4cCI6MjA0NDIxMTM5OX0.8EgW5zS9C2qEtcvQMc-sTPbQibDD7SzUEONbYZDBNrk", // Use environment variable for security
+        },
+      }
+    )
+      .then((res) => res.json())
+  // export async function getStaticPaths() {
+  //   const artists = await fetch(
+  //     "https://sfjafeukemmdrumyuart.supabase.co/rest/v1/karussel",
+  //     {
+  //       headers: {
+  //         apikey:
+  //           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmamFmZXVrZW1tZHJ1bXl1YXJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUzOTksImV4cCI6MjA0NDIxMTM5OX0.8EgW5zS9C2qEtcvQMc-sTPbQibDD7SzUEONbYZDBNrk",
+  //       },
+  //     }
+  //   ).then((res) => res.json());
 
+    return artists.map((artist) => ({
+      params: { artist: artist.slug }, // [artist]=artist.slug
+      props: { artist }, // send al data med som props
+    }));
+  }
+
+  const { artist } = Astro.props;
+  console.log(artist);
+  const template = document.querySelector("template");
+  const copy = template.content.cloneNode(true);
+  copy.querySelector("h1").textContent = artist.artist;
+  // artist.name, artist.image osv.
+</script>
 <style></style>
