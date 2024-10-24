@@ -1,0 +1,21 @@
+---
+const artists = await fetch(
+  "https://sfjafeukemmdrumyuart.supabase.co/rest/v1/karussel",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmamFmZXVrZW1tZHJ1bXl1YXJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUzOTksImV4cCI6MjA0NDIxMTM5OX0.8EgW5zS9C2qEtcvQMc-sTPbQibDD7SzUEONbYZDBNrk", // Use environment variable for security
+    },
+  }
+).then((res) => res.json());
+
+import Acard from "../../components/Acard.astro";
+import Layout from "../../layout/Layout.astro";
+---
+
+<Layout>
+  <ul>
+    {artists.map((artist) => <Acard artist={artist} />)}
+  </ul>
+</Layout>
