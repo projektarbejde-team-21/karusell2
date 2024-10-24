@@ -15,6 +15,7 @@ import Layout from "../../layout/Layout.astro";
 ---
 
 <Layout>
+  <h1>LINE UP</h1>
   <div class="lineup-grid">
     <ul>
       {artists.map((artist) => <Acard variant="primary" artist={artist} />)}
@@ -27,6 +28,10 @@ import Layout from "../../layout/Layout.astro";
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-decoration: none;
+  }
+  h1 {
+    color: white;
+    margin-left: 55px;
   }
 
   /*  li{

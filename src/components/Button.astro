@@ -18,22 +18,26 @@ const { variant = "primary", size = "medium" } = Astro.props;
     border-width: 2px;
   }
   [data-variant="primary"]:hover {
-   background-color: rgb(0, 255, 4);
+    background-color: rgb(0, 255, 4);
     color: rgb(18, 5, 36);
   }
 
   /* sekundær */
   [data-variant="secondary"] {
     padding: 1em;
-    background-color: rgb(18, 5, 36);
+    background-color: rgb(0, 255, 4);
     color: rgb(247, 253, 255);
-    border-color: rgb(0, 255, 4);
+    border-color: rgb(18, 5, 36);
     border-style: solid;
     border-radius: 15px;
     border-width: 2px;
   }
   [data-variant="secondary"]:hover {
-    background-color: rgb(0, 255, 4);
-    color: rgb(18, 5, 36);
+    background-color: rgb(18, 5, 36);
+    color: rgb(0, 255, 4);
+    border-color: rgb(0, 255, 4);
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 2px;
   }
 </style>
