@@ -105,7 +105,6 @@ import Card from "../components/Card.astro"
   }
 /* Desktop-styling */
   @media (min-width: 750px) {
-    
     .submit_from {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -119,20 +118,38 @@ import Card from "../components/Card.astro"
   grid-column: 1;
   grid-row: 1;
   font-size: 23px;
-  padding-top: 4rem;
+ 
 } 
   }
-    .tekst_form {
+    @media (max-width: 750px) { 
+        .tekst_form {
       grid-column: 1;
       grid-row: 1;
       text-align: left;
       padding-top: 6rem;
+      padding-left: 1rem;
+
+    }
+    .h1_form {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 23px;
+ padding-left: 1rem;
+} 
+    }
+    .tekst_form {
+      grid-column: 1;
+      grid-row: 1;
+      text-align: left;
+      padding-top: 1rem;
+      
 
     }
 
     .form-container {
+padding-left: 1rem;
       padding-top: 1rem;
-      max-width: 100%; Full width i grid-kolonnen
+      max-width: 90%; Full width i grid-kolonnen
     } 
   .lineup_h1 {
     padding-left: 1rem;
@@ -168,6 +185,7 @@ import Card from "../components/Card.astro"
     color: white;
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
+  
   }
 
   /* Karusell styling */
