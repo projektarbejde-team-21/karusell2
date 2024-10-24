@@ -24,11 +24,26 @@ import Layout from "../../layout/Layout.astro";
 
 <Layout>
   <h1>{artist.artist}</h1>
+  <h4>{artist.about}</h4>
   <img src={`/img/${artist.image}`} alt={artist.name} />
 </Layout>
 
 <style>
   h1 {
     color: antiquewhite;
+  }
+  h4 {
+    color: white;
+  }
+  * {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+  img {
+    grid-column: 2;
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
   }
 </style>

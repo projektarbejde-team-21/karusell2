@@ -4,6 +4,7 @@ import "../styles/global.css";
 import Hero from "../components/Hero.astro";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro"
+
 ---
 <Layout>
   <main>
@@ -89,7 +90,7 @@ import Card from "../components/Card.astro"
   h1 {
     color: #96e9ff;
   }
-
+ 
   p {
     color: white;
   }
@@ -102,6 +103,11 @@ import Card from "../components/Card.astro"
   form {
     display: flex;
     flex-direction: column;
+  }
+
+  a {
+    text-decoration: none;
+    color: aliceblue;
   }
 /* Desktop-styling */
   @media (min-width: 750px) {

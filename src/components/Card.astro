@@ -1,11 +1,35 @@
-<div>
-  <article>
-    <img src="public/img/anetha.webp" alt="Anetha" />
-    <h1>Anetha</h1>
-    <h3>Thursday 23 August 2024</h3>
-  </article>
-</div>
+---
+const artists = await fetch(
+  "https://sfjafeukemmdrumyuart.supabase.co/rest/v1/karussel",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmamFmZXVrZW1tZHJ1bXl1YXJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUzOTksImV4cCI6MjA0NDIxMTM5OX0.8EgW5zS9C2qEtcvQMc-sTPbQibDD7SzUEONbYZDBNrk", // Use environment variable for security
+    },
+  }
+).then((res) => res.json());
+
+import Acard from "./Acard.astro";
+---
+
+<ul>
+  {artists.map((artist) => <Acard artist={artist} />)}
+</ul>
+
 <style>
+  ul {
+    background-color: #dff8ff;
+    display: flex;
+    overflow-x: hidden, scroll;
+    flex-shrink: 0;
+  }
+
+  a {
+    color: rgb(225, 0, 0);
+    text-decoration: none;
+  }
+
   div {
     gap: 1rem;
   }
@@ -15,13 +39,14 @@
   }
 
   h1 {
-    color: black;
-  }
-  h3 {
-    color: #064556;
+    color: rgb(255, 255, 255);
   }
 
   img {
     width: 200px;
+  }
+
+  h4 {
+    color: #96e9ff;
   }
 </style>

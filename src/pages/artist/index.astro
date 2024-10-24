@@ -15,7 +15,27 @@ import Layout from "../../layout/Layout.astro";
 ---
 
 <Layout>
-  <ul>
-    {artists.map((artist) => <Acard artist={artist} />)}
-  </ul>
+  <div class="lineup-grid">
+    <ul>
+      {artists.map((artist) => <Acard artist={artist} />)}
+    </ul>
+  </div>
 </Layout>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-decoration: none;
+  }
+
+  li{
+    border-style: solid;
+    color: rgb(0, 255, 4);
+    border-radius: 10px;
+  }
+   {
+    color: #ba892e;
+    text-decoration: none;
+  }
+</style>

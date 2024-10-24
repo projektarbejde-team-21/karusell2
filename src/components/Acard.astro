@@ -4,7 +4,43 @@ const { artist } = Astro.props;
 
 <li>
   <a href={`/artist/${artist.slug}`}>
-    <h3>{artist.name}</h3>
+    <h3>{artist.artist}</h3>
+    <h4>{artist.time}</h4>
     <img src={`/img/${artist.image}`} alt={artist.name} />
   </a>
 </li>
+
+<style>
+  li {
+    margin: 1rem;
+    /*     border-style: solid;
+    color: rgb(0, 255, 4);
+    border-radius: 10px; */
+    display: grid;
+    justify-content: center;
+  }
+  /* * {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
+  img {
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 2rem;
+    display: grid;
+    justify-content: center;
+  }
+
+  h4 {
+    display: grid;
+    justify-content: center;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+</style>
