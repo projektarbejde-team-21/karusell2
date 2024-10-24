@@ -11,13 +11,13 @@ export async function getStaticPaths() {
   ).then((res) => res.json());
 
   return artists.map((artist) => ({
-    params: { artist: artist.slug }, // [artist]=artist.slug
-    props: { artist }, // send al data med som props
+    params: { artist: artist.slug }, 
+    props: { artist }, 
   }));
 }
 
 const { artist } = Astro.props;
-console.log(artist); // artist.name, artist.image osv.
+console.log(artist); 
 
 import Layout from "../../layout/Layout.astro";
 import Button from "../../components/Button.astro";
