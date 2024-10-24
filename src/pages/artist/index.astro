@@ -17,7 +17,7 @@ import Layout from "../../layout/Layout.astro";
 <Layout>
   <div class="lineup-grid">
     <ul>
-      {artists.map((artist) => <Acard artist={artist} />)}
+      {artists.map((artist) => <Acard variant="primary" artist={artist} />)}
     </ul>
   </div>
 </Layout>
@@ -29,7 +29,7 @@ import Layout from "../../layout/Layout.astro";
     text-decoration: none;
   }
 
-  li{
+  /*  li{
     border-style: solid;
     color: rgb(0, 255, 4);
     border-radius: 10px;
@@ -37,5 +37,5 @@ import Layout from "../../layout/Layout.astro";
    {
     color: #ba892e;
     text-decoration: none;
-  }
+  } */
 </style>

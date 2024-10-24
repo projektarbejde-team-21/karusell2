@@ -1,4 +1,6 @@
 ---
+
+
 import Layout from "../layout/Layout.astro";
 import "../styles/global.css";
 import Hero from "../components/Hero.astro";
@@ -10,10 +12,11 @@ import Card from "../components/Card.astro"
   <main>
     <Hero />
     <h1 class="lineup_h1">LINEUP 2025</h1>
+ 
     <Card />
 
     <div class="Button">
-      <a href="/lineup">
+      <a href="./artist">
         <Button variant="primary">VIEW ALL</Button>
       </a>
     </div>
@@ -220,6 +223,7 @@ padding-left: 1rem;
     width: 450px;
     height: 450px;
     border-radius: 8px;
+    object-fit: cover;
   }
 
   .carousel-prev, .carousel-next {
